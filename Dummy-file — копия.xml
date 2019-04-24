@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExpense xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Expense>
+    <ExpenseGuid>1b43875e-633e-43ac-8a1c-ad1fd023c490</ExpenseGuid>
+    <ExpenseStatus>
+      <Status>Reported</Status><!-- Possible values: Reported, Approved, Controlled (depends on how approval flow and export to SFTP is set up) -->
+      <Reason />
+    </ExpenseStatus>
+    <Amount>63.00</Amount><!-- Expense amount (in the original currency) -->
+    <Date>2018-01-31T00:00:00</Date><!-- Transaction Date -->
+    <User>
+      <Email>user@yourcompany.com</Email>
+      <ExternalId>123456</ExternalId>
+      <UserGUID>9c843341-af19-4003-84bb-a1d29197beaa</UserGUID>
+	  <IBAN>NNNN-NNNN-NNNN-NNNN</IBAN><!-- Number of account for reimbursement -->
+    </User>
+    <ExpenseAccount><!-- Expense Category -->
+      <ExpenseAccountGuid>b5a46e5c-1886-4177-81c3-2ce1114be869</ExpenseAccountGuid>
+      <Name>Food and beverages (employees)</Name>
+      <Active>true</Active>
+      <AccountancyNumber />
+      <AccountancyNumberExtra />
+    </ExpenseAccount>
+    <Reimbursable>true</Reimbursable>
+    <IsInvoice>false</IsInvoice>
+    <Currency>DKK</Currency>
+    <MerchantEnterpriseNumber />
+    <Merchant>7 eleven</Merchant>
+    <Note>Comment of the user</Note>
+    <VatAmount>3.71</VatAmount>
+    <VatPercentage>6.2500</VatPercentage>
+    <VatCode>DK Purchases 6,25%</VatCode>
+    <CustomFields><!-- Custom Fields on expense level -->
+      <CustomField>
+        <CustomFieldGuid>990f0bb7-25e1-4fe2-a7d8-2c83b90d138d</CustomFieldGuid>
+        <Name>Some custom field name 1</Name>
+        <Required>false</Required>
+        <Enabled>true</Enabled>
+      </CustomField>
+      <CustomField>
+        <CustomFieldGuid>3c0f8d45-bbd1-4c16-89c8-75cf8d9d7ea9</CustomFieldGuid>
+        <Name>Some custom field name 2</Name>
+        <Required>true</Required>
+        <Enabled>true</Enabled>
+        <Value>490 Value of custom field</Value>
+        <Code>490</Code>
+      </CustomField>
+	  ...
+    </CustomFields>
+    <Image>https://streaming.xpenditure.com/Receipt/original/9c843341-af19-4003-84bb-a1d29197beaa/9c843341-af19-4003-84bb-a1d29197beaa/1b43875e-633e-43ac-8a1c-ad1fd023c490</Image>
+	<Base64string>data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAPAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQABgQEBAUEB...H/9k=</Base64string><!-- Only available if Base64string setting is activated for SFTP connection -->
+	<FileExtension>JPEG</FileExtension><!-- Only available if Base64string setting is activated for SFTP connection -->
+    <CalculatedCurrencies><!-- Calculated amounts for this expense in Branch currency and all of the account currencies (primary and secondary) -->
+      <CalculatedCurrency>
+        <Amount>7.54</Amount>
+        <Currency>GBP</Currency>
+        <VatAmount>0.44</VatAmount>
+      </CalculatedCurrency>
+      <CalculatedCurrency>
+        <Amount>...</Amount>
+        <Currency>...</Currency>
+        <VatAmount>...</VatAmount>
+      </CalculatedCurrency>
+	  ...
+    </CalculatedCurrencies>
+    <Group><!-- Group / Department / Cost Center -->
+      <GroupGuid>ed82ege0-696a-4739-bfd6-cau25b5249ea</GroupGuid>
+      <Name>2105645 Construction Department</Name>
+      <GroupId>2105645</GroupId>
+	  <CustomFields><!-- Custom Fields on Group level -->
+		<CustomField>
+			<CustomFieldGuid>990f0bb7-25e1-4fe2-a7d8-2c83b90d138d</CustomFieldGuid>
+			<Name>Some custom field name 1</Name>
+			<Required>false</Required>
+			<Enabled>true</Enabled>
+		</CustomField>
+		<CustomField>
+			<CustomFieldGuid>3c0f8d45-bbd1-4c16-89c8-75cf8d9d7ea9</CustomFieldGuid>
+			<Name>Some custom field name 2</Name>
+			<Required>true</Required>
+			<Enabled>true</Enabled>
+			<Value>490 Value of custom field</Value>
+			<Code>490</Code>
+		</CustomField>
+		...
+	  </CustomFields>
+    </Group>
+    <Project>
+      <ProjectGuid>db797814-aed2-46d8-9ad6-7e818caa815a</ProjectGuid>
+      <Name>1100056111 Name of the project</Name>
+      <ProjectId>1100056111</ProjectId>
+    </Project>
+    <Branch>
+      <BranchGuid>1f0ee19a-b40d-e711-81fc-005156bf1aff</BranchGuid>
+      <Name>MyCompany Denmark Branch</Name>
+      <BranchId>110</BranchId>
+      <EnterpriseNumber>110</EnterpriseNumber>
+      <Currency>DKK</Currency><!-- Branch currency code -->
+      <Amount>63.00</Amount><!-- Calculated amount in Branch currency -->
+      <VatAmount>3.71</VatAmount>
+    </Branch>
+	<Mileage><!-- Only present if expense type is Mileage -->
+      <MileageRateName>Own car (domestic and abroad) 3,90 NOK/km</MileageRateName>
+      <From>Bergen, Norway</From>
+      <To>Hauglandshella, Norway</To>
+      <Distance>52.40</Distance>
+      <BackAndForth>true</BackAndForth>
+      <Unit>km</Unit>
+      <MileageRates>
+        <MainRate>
+          <Rate>3.90000</Rate>
+          <Code>135-0000296</Code>
+          <Distance>52.40</Distance>
+        </MainRate>
+        <SubRates />
+      </MileageRates>
+    </Mileage>
+	<Trip><!-- Only present if expense is associated with a trip -->
+      <TripGuid>1e99a49a-1091-4c7f-55fa-61503f5bd560</TripGuid>
+      <Name>Name of trip</Name>
+      <StartDate>2018-01-31T07:45:00</StartDate>
+      <EndDate>2018-02-12T16:45:00</EndDate>
+      <TripID>TRP013156185</TripID>
+    </Trip>
+	<VatValues><!-- VAT sub values for soft-splitted expense -->
+	  <VatValue>
+		<Amount>100.00</Amount>
+		<VatAmount>10.00</VatAmount>
+		<Percentage>10</Percentage>
+		<ExpenseCategory>...</ExpenseCategory><!-- Same output as for ExpenseAccount -->
+	  <VatValue>
+	</VatValues>
+    <Country>DK</Country><!-- Code for country of expense according to ISO 3166-1 -->
+    <XpdReference>XPD012216312</XpdReference><!-- Reference number of expense in this company account -->
+    <MatchStatus>None</MatchStatus><!-- Transaction matching status -->
+	<CardNumber>5032</CardNumber><!-- Last 4 or 5 digits of CreditCard number. Only present if paid by card -->
+    <AccountNumber>0532013000</AccountNumber><!-- Bank account number -->
+	<PaymentMethod>Cash</PaymentMethod>
+    <PaymentMethodGuid>fe5hc4b3-9767-4ebf-1084-2ebba4771ede</PaymentMethodGuid>
+    <PaymentMethodName>Cash</PaymentMethodName><!-- Possible values: Cash, DebetCard, CreditCard, Per Diem, Transfer -->
+    <OwnerShip>Personal</OwnerShip>
+    <DateSubmitted>2018-01-31T10:30:40.753</DateSubmitted>
+    <DateApproved>2018-01-31T11:06:12.793</DateApproved>
+    <ApprovedBy>approver@yourcompany.com</ApprovedBy>
+    <DateControlled xsi:nil="true" />
+    <ControlledBy xsi:nil="true" />
+	<PerDiem><!-- Only present if Payment method is Per Diem -->
+      <Rate>
+        <Amount>111.00</Amount>
+        <Name>Allowance without overnight stay 6-12 h</Name>
+        <Code>111-0000111</Code>
+      </Rate>
+      <Duration>09:00</Duration>
+      <Region>Norway</Region>
+      <Currency>NOK</Currency>
+	  <Deductions><!-- Only present if specified for certain rate -->
+        <Deduction>
+          <Name>Lunch</Name>
+          <Amount>226.20</Amount>
+          <Code>222-0000222</Code>
+        </Deduction>
+      </Deductions>
+      <Supplements /><!-- Only present if specified for certain rate -->
+    </PerDiem>
+    <TravellerId />
+    <CheckInDate xsi:nil="true" /><!-- For hotel expenses -->
+    <CheckOutDate xsi:nil="true" /><!-- For hotel expenses -->
+    <NumberOfNights xsi:nil="true" /><!-- For hotel expenses -->
+	<LinkTravel><!-- Properties important for linking with Travel -->
+        <LinkId>605320</LinkId>
+        <LinkCode>8LOJSF</LinkCode>
+        <BookingId>2121324</BookingId>
+    </LinkTravel>
+	<RejectReasons><!-- Only present if expense was rejected -->
+      <Reason>
+        <Title>Duplicated expense</Title>
+        <Type>Duplicate</Type>
+      </Reason>
+      <Reason>
+        <Title>No receipt</Title>
+        <Type>No receipt</Type>
+      </Reason>
+	</RejectReasons>
+  </Expense>
+  <Expense>...</Expense>
+  <Expense>...</Expense>
+</ArrayOfExpense>
